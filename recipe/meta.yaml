@@ -1,4 +1,4 @@
-{% set version = '1.0.4' %}
+{% set version = "1.0.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/BVAR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/BVAR/BVAR_{{ version }}.tar.gz
-  sha256: 440ce37924187183dd54e7e0f6ebf8e5faf52b1fbaac6914cca3f0c6bcc56b89
+  sha256: b43243dc2ab2d5e6ac3bf5d00c77c36416419d44f616acac837f1d272f3a6e15
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   noarch: generic
   rpaths:
@@ -39,12 +39,8 @@ test:
 about:
   home: https://github.com/nk027/bvar
   license: GPL-3.0-only
-  summary: Estimation of hierarchical Bayesian vector autoregressive models following Kuschnig
-    & Vashold (2021) <doi:10.18637/jss.v100.i14>. Implements hierarchical prior selection
-    for conjugate priors in the fashion of Giannone, Lenza & Primiceri (2015) <doi:10.1162/REST_a_00483>.
-    Functions to compute and identify impulse responses, calculate forecasts, forecast
-    error variance decompositions and scenarios are available. Several methods to print,
-    plot and summarise results facilitate analysis.
+  summary: Estimation of hierarchical Bayesian vector autoregressive models following Kuschnig & Vashold (2021) <doi:10.18637/jss.v100.i14>. Implements hierarchical prior selection for conjugate priors in the fashion of Giannone, Lenza & Primiceri (2015) <doi:10.1162/REST_a_00483>. Functions to compute and identify impulse
+    responses, calculate forecasts, forecast error variance decompositions and scenarios are available. Several methods to print, plot and summarise results facilitate analysis.
   license_family: GPL3
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
